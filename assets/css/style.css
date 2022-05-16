@@ -874,7 +874,7 @@ article.certify-box .certify {border-top:0;line-height:1;text-align: left;}
 .btn-red{background-color:#fd0e0e;}
 .btn-light {background-color:#ebebeb;color:#888;}
 .btn-light:disabled {background-color:#ebebeb;color:#111;cursor: default;}
-.btn-light2 {color:#111;background-color:#f2f3f7;border-radius: 0.25rem;}
+.btn-light-secondary {color: #fff;background-color: #5ccddf;border-radius: 0.25rem;}
 .btn-more {font-size:.75rem;color:#888;text-decoration: underline;}
 .btn-dark{background-color: #444;color:#fff;}
 .btn-gray{background-color: #dadada;color:#fff;}
@@ -1319,25 +1319,6 @@ line-height: 1.35;letter-spacing: -.06rem;}
 }
 
 /* data picker */
-.ui-datepicker-header{
-    position: relative;
-    padding: 1rem;
-    width: fit-content;
-}
-.ui-datepicker{
-    display: block;
-    /* background: #fff; */
-    position: absolute;
-    z-index: 10;
-    width: max-content;
-    left: 0;
-    border-radius: 0 0 1rem 1rem;
-    top: -1.34rem;
-}
-.picker-full .ui-datepicker-calendar,
-.picker-full .ui-datepicker-bg{
-    display: block !important;
-}
 .ui-datepicker-bg{
     display: none;
     position: fixed;
@@ -1382,9 +1363,6 @@ line-height: 1.35;letter-spacing: -.06rem;}
     transform: rotate(180deg);
     right: 0;
 }
-.ui-datepicker-calendar{    
-    display: none;
-}
 .ui-datepicker-calendar th>span{
     color:#c2c2c2;
     font-size: .7rem;
@@ -1425,6 +1403,40 @@ line-height: 1.35;letter-spacing: -.06rem;}
     z-index: 11;
 }
 
+/* date picker - 생활비서 */
+.data-month-selec .ui-datepicker-header{
+    position: relative;
+    padding: 1rem;
+    width: fit-content;
+}
+.data-month-selec .ui-datepicker{
+    display: block;
+    /* background: #fff; */
+    position: absolute;
+    z-index: 10;
+    width: max-content;
+    left: 0;
+    top: -1.34rem;
+}
+.data-month-selec .ui-datepicker-calendar{    
+    display: none;
+}
+.picker-full .ui-datepicker-calendar,
+.picker-full .ui-datepicker-bg{
+    display: block !important;
+}
+/*
+.picker-full .ui-datepicker-calendar{
+    animation-name: slideDown;
+	-webkit-animation-name: slideDown;	
+	animation-duration: 1s;	
+	-webkit-animation-duration: 1s;
+	animation-timing-function: ease;	
+	-webkit-animation-timing-function: ease;	
+	visibility: visible !important;		
+}
+*/
+
 /* data-info-wrp */
 .data-info-wrp{
     padding:1.25rem 0;
@@ -1436,23 +1448,17 @@ line-height: 1.35;letter-spacing: -.06rem;}
     align-items: center;
     width: 100%;
     font-size: .85rem;
-    margin-bottom: 1.25rem;
+    margin: 0;
 	background-color: transparent;
     box-shadow: none;
-}
-.data-info-wrp .calender-wrp{
+padding: 0 0 1.25rem !important;}
+.data-info-wrp .calendar-wrp{
     align-items: center;
 }
-.data-info-wrp .calender-wrp .calender-date-mid{
+.data-info-wrp .calendar-wrp .calender-date-mid{
     margin:0 .5rem;
 }
-.data-info-wrp .calender-wrp .ui-datepicker{
-	position:fixed;
-	top:unset;
-	padding-bottom: 4.5rem;
-    bottom: 0;
-}
-.data-info-wrp .calender-wrp .ui-datepicker-header{
+.data-info-wrp .calendar-wrp .ui-datepicker-header{
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -1461,7 +1467,7 @@ line-height: 1.35;letter-spacing: -.06rem;}
 	width: 10.3rem;
 	margin: 4rem auto 0;
 }
-.data-info-wrp .calender-wrp .ui-datepicker::before{
+.data-info-wrp .calendar-wrp .ui-datepicker::before{
 	content: '조회기간을 선택해주세요.';
 	position: absolute;
 	left:1.25rem;
@@ -1469,7 +1475,7 @@ line-height: 1.35;letter-spacing: -.06rem;}
 	font-size: 1.2rem;
 	font-weight: 500;
 }
-.data-info-wrp .calender-wrp .btn-cal-close{
+.data-info-wrp .calendar-wrp .btn-cal-close{
 	background: url(../images/common/ico-cal-close.png) no-repeat center/contain;
 	width: 1.25rem;
 	height: 1.25rem;
@@ -1479,7 +1485,7 @@ line-height: 1.35;letter-spacing: -.06rem;}
 	bottom: 17.5rem;
 	top: unset;
 }
-.data-info-wrp .calender-wrp .btn-cal-close.select-complete{
+.data-info-wrp .calendar-wrp .btn-cal-close.select-complete{
 	background:transparent;
 	width: 100%;
 	height: inherit;
@@ -1487,7 +1493,7 @@ line-height: 1.35;letter-spacing: -.06rem;}
 	bottom: 0;
 	right: 0;
 margin-bottom: 0;}
-.data-info-wrp .calender-wrp .btn-cal-close.select-complete .btn{
+.data-info-wrp .calendar-wrp .btn-cal-close.select-complete .btn{
 	border-radius: 0;
 }
 .data-info-wrp .data-info-box{
@@ -2161,7 +2167,7 @@ line-height: 1.2;}
 .agree-c-blue .btn-secondary{
     background-color: #5ccbdf;
 }
-.agree-c-blue .btn-light2{
+.agree-c-blue .btn-light-secondary{
     background-color: #fff;
     border: 1px solid #e4e4e4;
 }
@@ -2426,7 +2432,7 @@ line-height: 1.2;}
     padding-bottom: 0;
 }
 .coinback-wrp .card.made-coin{
-    margin: 0 1.25rem 1.25rem;
+    margin: 0 0.775rem 0.775rem;
     
 padding-top: 1.25rem;}
 
@@ -2475,7 +2481,7 @@ margin-top: -4.25rem;padding-top: 4.5rem;}
     background-position:center;
 }
 .brand-select{
-    padding:1.25rem;
+    padding: 0.775rem;
 }
 .brand-select .title{
     margin-bottom: 1rem;
@@ -2536,7 +2542,7 @@ max-width: 12rem;margin: 0 auto;}
     flex-flow: column;
     padding:1rem;
     width: 100%;
-    border:1px solid #fff;
+    border: 2px solid #fff;
     font-size: inherit;
     border-radius: .5rem;
 }
@@ -2555,7 +2561,7 @@ max-width: 12rem;margin: 0 auto;}
     right: .7rem;
 }
 .brand-select .select-list.form-check input[type="checkbox"]:checked + label{
-    border:1px solid #01b1c8;
+    border: 2px solid #01b1c8;
 }
 .brand-select .select-list.form-check input[type="checkbox"]:checked + label::before,
 .brand-select .select-list.form-check input[type="checkbox"]:checked + label::after{
@@ -2571,7 +2577,7 @@ max-width: 12rem;margin: 0 auto;}
 }
 
 .coinback-guide-btn{
-    margin:0 1.25rem;
+    margin: 0 0.775rem;
     background-color: #e5e8ef;
     position: relative;
     padding:0 1.25rem 1.25rem;
