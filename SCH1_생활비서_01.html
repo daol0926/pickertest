@@ -50,16 +50,21 @@
 	<!-- date-select -->
 		<section class="date-select pb1_5">
 			<div class="row justify-content-between">
-				<!-- data-month-selec -->
+				<div class="data-month-selec" id="datepicker">
+					<div class="ui-datepicker-bg"></div>
+				</div> <!--//data-month-selec -->
+				<!-- data-month-selec 
 				<div class="data-month-selec" onclick="modal('.month-selec-list')">
 					<div class="month-tab tit">2022년 4월
 						<button type="button" class="ico ico-fold"></button>
 					</div>
 				</div>
-				<!--//data-month-selec -->
-				<button type="button" class="btn-txt c-gray"><i class="ico ico-refresh"></i>구글캘린더 연동중</button>
+				//data-month-selec -->
+				<div class="picker-btn-area">
+					<button type="button" class="btn-txt c-gray"><i class="ico ico-refresh"></i>구글캘린더 연동중</button>
+				</div>
 			</div>
-			<!-- Swiper -->
+			<!-- dateSwiper -->
 			<div class="swiper dateSwiper">
 				<div class="swiper-wrapper">
 					<div class="swiper-slide focused">
@@ -92,39 +97,41 @@
 					</div>
 					<div class="swiper-slide">
 						<span>Mon</span>
-						<span class="num">08</span>
+						<span class="num">01</span>
 					</div>
 					<div class="swiper-slide">
-						<span>Mon</span>
-						<span class="num">09</span>
+						<span>Tue</span>
+						<span class="num">02</span>
 					</div>
 					<div class="swiper-slide">
-						<span>Mon</span>
-						<span class="num">10</span>
+						<span>Wed</span>
+						<span class="num">03</span>
 					</div>
 					<div class="swiper-slide">
-						<span>Mon</span>
-						<span class="num">11</span>
+						<span>Thu</span>
+						<span class="num">04</span>
 					</div>
 					<div class="swiper-slide">
-						<span>Mon</span>
-						<span class="num">12</span>
+						<span>Fri</span>
+						<span class="num">05</span>
 					</div>
 					<div class="swiper-slide">
-						<span>Mon</span>
-						<span class="num">13</span>
+						<span>Sat</span>
+						<span class="num">06</span>
 					</div>
 					<div class="swiper-slide">
-						<span>Mon</span>
-						<span class="num">14</span>
+						<span class="holiday">Sun</span>
+						<span class="num">07</span>
 					</div>
 				</div>
 				<div class="swiper-button-next"></div>
       			<div class="swiper-button-prev"></div>
 			</div>
-			<div class="picker-bg"></div>
-			<div class="btn-cal-swipe" id="datepicker"></div>
-			<div class="btn-cal-close"></div>
+			<!--//dateSwiper-->
+			<div class="btn-area col-12 mt0">
+				<button type="button" class="btn-show-calendar"></button>
+				<button type="button" class="btn-hide-calendar"></button>
+			</div>
 			<div class="btn-area col-12">
 				<button type="button" class="btn btn-secondary white"><i class="ico ico-google"></i>구글 캘린더 연동</button>
 			</div>
@@ -505,6 +512,7 @@
 
 
 <!-- modal -->
+<!--
 <div class="modal bottom-sheet month-selec-list">
 	<header class="modal-header">
 		<h2 class="title">기준 월 선택</h2>
@@ -529,6 +537,7 @@
 
 	</section>
 </div>
+-->
 <!--//modal -->
 
 <script type="text/javascript" src="assets/js/jquery-3.6.0.min.js"></script>
@@ -538,12 +547,13 @@
 <script type="text/javascript">
 	//자산 accordion
 	accordion();
-	//날짜선택
-	datePic();
-	//월선택
-	monthPic();
 	//목표예산 설정
 	purposeSet();
+	//date picker
+	calPic();
+	//month, date swipe
+	//monthPic();
+	datePic();
 </script>
 </body>
 </html>

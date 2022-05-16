@@ -699,7 +699,7 @@ article.certify-box .certify {border-top:0;line-height:1;text-align: left;}
 .dtl-info .total-dtl dd {width:50%;font-weight:500;color:#111;text-align: right;}
 .dtl-info .total-dtl dd .won {color:#111;}
 
-.dtl-history {padding:0 1.5rem;}
+.dtl-history {padding: 0 0.775rem;}
 .dtl-history .month-tab {padding:.5rem 0 1.25rem 0;font-size:.75rem;color:#444;text-align: right;display: none;}
 .dtl-history .month-tab .ico {margin-left:.75rem;}
 .list-cate {margin-bottom:1.125rem;}
@@ -940,20 +940,23 @@ padding: 1.5rem !important;margin: 1.5rem 0.775rem 0;}
 .select-month{
     font-size: 1.3rem;
 }
-.date-select .btn-cal-swipe,
-.date-select .btn-cal-close{
+.date-select .btn-show-calendar,
+.date-select .btn-hide-calendar{
     background-color: #ededed;
     border-radius: .5rem;
     width: 2.5rem;
     height: .3rem;
-    margin-top:-1rem;
-    margin-bottom:1rem;
+    /* margin-top:-1rem; */
+    /* margin-bottom:1rem; */
+    margin: 0 auto;
+    display: block;
 }
-.date-select .btn-cal-close{
-    position:absolute;
-    
-    z-index: 11;
-top: 34rem;}
+.date-select .btn-hide-calendar{
+    position: fixed;
+    z-index: 4;
+    left:calc(50% - 1.25rem);
+    bottom:1rem;
+}
 .dateSwiper{
     margin:1.5rem 0;
     width: calc(100% + 3rem);
@@ -1203,6 +1206,9 @@ line-height: 1.35;letter-spacing: -.06rem;}
     flex:0 0 75%;
     max-width: calc(100% - 4rem);
 }
+.my-sch .day-schedule .history li{
+    padding-right: 0;
+}
 
 .btn-area.fixed-bottom.bn-img{
     padding:0;
@@ -1313,41 +1319,52 @@ line-height: 1.35;letter-spacing: -.06rem;}
 }
 
 /* data picker */
-.ui-datepicker{
-	display: none;
+.ui-datepicker-header{
+    position: relative;
+    padding: 1rem;
+    width: fit-content;
 }
-.picker-on .ui-datepicker{
+.ui-datepicker{
     display: block;
-    background: #fff;
+    /* background: #fff; */
     position: absolute;
     z-index: 10;
-    width: 100%;
+    width: max-content;
     left: 0;
-    top: 7rem;
-    padding: 0 1.25rem 1.25rem;
-border-radius: 0 0 1rem 1rem;}
-.picker-bg{
-    display: block;
-    position: absolute;
+    border-radius: 0 0 1rem 1rem;
+    top: -1.34rem;
+}
+.picker-full .ui-datepicker-calendar,
+.picker-full .ui-datepicker-bg{
+    display: block !important;
+}
+.ui-datepicker-bg{
+    display: none;
+    position: fixed;
     width: 100%;
     height: 100%;
+    background-color: #fff;
+    top: 0;
     left:0;
-    top:0;
-    z-index: 9;
-    background-color: #000;
-    opacity: .3;
+    z-index: 4;
 }
 .ui-datepicker-title{
     display: flex;
     flex-flow: row-reverse;
     align-items: center;
     justify-content: flex-end;
-    padding: 1.05rem 1.25rem 2.2rem;
+    padding: 0;
     font-size: 1.3rem;
     font-weight: 600;
+    color: #111;
+    line-height: 1.25;
+    
 }
 .ui-datepicker-year::after{
-    content: '.';
+    content: '년';
+}
+.ui-datepicker-month::after{
+    content: '월';
 }
 .ui-datepicker-prev,
 .ui-datepicker-next{
@@ -1357,12 +1374,16 @@ border-radius: 0 0 1rem 1rem;}
     height: .5rem;
     font-size: 0;
     position: absolute;
-    top: 1.45rem;
-    left: 1.5rem;
+    top: 1.6rem;
+    left: 0;
 }
 .ui-datepicker-next{
-    left: 8.3rem;
+    left: unset;
     transform: rotate(180deg);
+    right: 0;
+}
+.ui-datepicker-calendar{    
+    display: none;
 }
 .ui-datepicker-calendar th>span{
     color:#c2c2c2;
@@ -1371,7 +1392,9 @@ border-radius: 0 0 1rem 1rem;}
 .ui-datepicker-calendar tbody td{
     text-align: center;
     padding: 0 .3rem;
+    height: 4.2rem;
 }
+.ui-datepicker-calendar tbody td span,
 .ui-datepicker-calendar tbody td a{
     display: block;
     padding: 1.62rem 0;
@@ -1379,6 +1402,7 @@ border-radius: 0 0 1rem 1rem;}
     color:#333;
     font-weight:600;
     position: relative;
+    font-size: 1rem;
 }
 .ui-datepicker-calendar .ui-state-active{
     background-color:#dff3fa;
@@ -1396,7 +1420,10 @@ border-radius: 0 0 1rem 1rem;}
     left:calc(50% - .25rem);
     margin-top: -1rem;
 }
-
+.picker-btn-area{
+    position: relative;
+    z-index: 11;
+}
 
 /* data-info-wrp */
 .data-info-wrp{
@@ -1411,7 +1438,8 @@ border-radius: 0 0 1rem 1rem;}
     font-size: .85rem;
     margin-bottom: 1.25rem;
 	background-color: transparent;
-box-shadow: none;}
+    box-shadow: none;
+}
 .data-info-wrp .calender-wrp{
     align-items: center;
 }
@@ -1422,7 +1450,8 @@ box-shadow: none;}
 	position:fixed;
 	top:unset;
 	padding-bottom: 4.5rem;
-bottom: 0;}
+    bottom: 0;
+}
 .data-info-wrp .calender-wrp .ui-datepicker-header{
 	display: flex;
 	justify-content: center;
@@ -1602,7 +1631,7 @@ overflow-x: auto;}
     justify-content: space-between;
     color:#666;
     /* padding-top:2rem; */
-}
+position: relative;}
 .data-month-selec .month-tab {
     display: flex;
     align-items: center;

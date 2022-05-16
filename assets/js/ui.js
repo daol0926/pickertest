@@ -528,19 +528,24 @@ function purposeSet(){
 }
 
 /* data picker */
-$( function() {
-	$( "#datepicker, #datepicker2" ).datepicker({
+function calPic() {
+	$('#datepicker').datepicker({
 		firstDay: 1,
-		monthNames: [ "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" ]
-		//dayNamesShort: [ "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" ]
+		monthNames: [ "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" ],
+		minDate: "-1m",
+		maxDate: "+1m",
+		showOn: "both",
+		//showButtonPanel: true,
+		//showAnim: "slideDown",
+		//closeText: '닫기',
+		dayNamesMin: [ "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" ]
 	});
-	$('.picker-bg, .ui-datepicker, .btn-cal-close').hide();
-	$('.hasDatepicker').click(function(){
-		$(this).addClass('picker-on');
-		$('.ui-datepicker, .picker-bg, .btn-cal-close').show();
+	$('.btn-show-calendar').click(function(){
+		$('.date-select').addClass('picker-full');
+		$(this).parents().find('body').addClass('scroll-y-hidden');
 	});
-	$('.btn-cal-close').click(function(){
-		$(this).hide();
-		$('.ui-datepicker, .picker-bg').hide('2000');
+	$('.btn-hide-calendar').click(function(){
+		$('.date-select').removeClass('picker-full');
+		$(this).parents().find('body').removeClass('scroll-y-hidden');
 	});
-  } );
+}
