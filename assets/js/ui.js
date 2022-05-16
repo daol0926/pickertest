@@ -439,7 +439,7 @@ function datePic(){
 			nextEl: ".swiper-button-next",
 			prevEl: ".swiper-button-prev",
 		  },
-		spaceBetween: 10,
+		spaceBetween: 5,
 		breakpoints: {
 		  640: {
 			slidesPerView: 7,

@@ -936,7 +936,7 @@ article.certify-box .certify {border-top:0;line-height:1;text-align: left;}
     width: calc(100% - 1.5rem);
     margin-left: 0;
     background: #fff;
-padding: 1.5rem !important;margin: 1.5rem 0.775rem 0;}
+padding: 1.5rem 0.775rem !important;margin: 1.5rem 0.775rem 0;}
 .select-month{
     font-size: 1.3rem;
 }
@@ -959,7 +959,7 @@ padding: 1.5rem !important;margin: 1.5rem 0.775rem 0;}
 }
 .dateSwiper{
     margin:1.5rem 0;
-    width: calc(100% + 3rem);
+    width: calc(100% + 1.5rem);
     height: 100%;
     position: relative;
     overflow: hidden;
@@ -1001,7 +1001,7 @@ padding: 1.5rem !important;margin: 1.5rem 0.775rem 0;}
     background-color: #5ccbdf;
     color:#fff;
     border-radius: 1.5rem;
-padding: 1rem 1.34rem;}
+padding: 1rem;}
 .dateSwiper .swiper-slide.focused .num{
     color:#fff;
 }
