@@ -966,6 +966,10 @@ padding: 1.5rem 0.775rem !important;margin: 1.5rem 0.775rem 0;}
     padding:0 1.5rem;
 }
 .dateSwiper .swiper-slide{
+    padding:.8rem .5rem;
+    margin-right: .8rem;
+}
+.dateSwiper .swiper-slide a{
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -982,8 +986,7 @@ padding: 1.5rem 0.775rem !important;margin: 1.5rem 0.775rem 0;}
     color:#c2c2c2;
     font-weight: normal;    
     font-size:0.7rem;
-    padding:.8rem .5rem;
-    margin-right: .8rem;
+    text-decoration: none;
 }
 .dateSwiper .swiper-slide .holiday,
 .ui-datepicker-calendar span[title="Sunday"]{
@@ -999,9 +1002,12 @@ padding: 1.5rem 0.775rem !important;margin: 1.5rem 0.775rem 0;}
 }
 .dateSwiper .swiper-slide.focused{
     background-color: #5ccbdf;
-    color:#fff;
     border-radius: 1.5rem;
-padding: 1rem;}
+    padding: 1rem;
+}
+.dateSwiper .swiper-slide.focused a{
+    color:#fff;
+}
 .dateSwiper .swiper-slide.focused .num{
     color:#fff;
 }

@@ -432,8 +432,9 @@ function tabMenu() {
 			$('.tab-wrp .inner-tab-cont:eq(' + num + ')').addClass("focused"); });
 }
 
+var dateSwiper;
 function datePic(){
-	var swiper = new Swiper(".dateSwiper", {
+	dateSwiper = new Swiper(".dateSwiper", {
 		slidesPerView: 7,
 		navigation: {
 			nextEl: ".swiper-button-next",
@@ -455,6 +456,8 @@ function datePic(){
 		  },
 		},
 	  });
+
+	setCaleandar();
 }
 
 function monthPic(){
@@ -527,6 +530,67 @@ function purposeSet(){
 	});
 }
 
+var currentDate = new Date();
+var selectedDate = `${currentDate.getFullYear()}${setNumberFormat(currentDate.getMonth() + 1)}${setNumberFormat(currentDate.getDate())}`;
+
+function setCaleandar(year, month) {
+	var setDate = {
+		year: year || currentDate.getFullYear(),
+		month: month || currentDate.getMonth() + 1,
+	}
+	var endDate = new Date(setDate.year, setDate.month, 0);
+	var week = [ "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" ];
+
+	var $dateSwiper = document.querySelector('.dateSwiper .swiper-wrapper');
+	var dateHtml = ''
+
+	var index = 1;
+	for (var i = 1; i <= endDate.getDate(); i++) {
+		var temp = week[new Date(setDate.year + '-' + setNumberFormat(setDate.month) + '-' + setNumberFormat(i)).getDay()];
+		var temp2 = `${setDate.year}${setNumberFormat(setDate.month)}${setNumberFormat(i)}`;
+
+		if (temp2 == selectedDate) {
+			dateHtml += `<div class="swiper-slide focused"><a href="#" class="date-select__item" data-target="${temp2}"><span>${temp}</span><span class="num">${setNumberFormat(i)}</span></a></div>`;
+			index = i;
+		} else {
+			dateHtml += `<div class="swiper-slide"><a href="#" class="date-select__item" data-target="${temp2}"><span>${temp}</span><span class="num">${setNumberFormat(i)}</span></a></div>`;
+		}
+	}
+
+	$dateSwiper.innerHTML = dateHtml;
+	dateSwiper.update();
+	dateSwiper.slideTo(index - 1, 0);
+
+
+	$dateSwiper.querySelectorAll('.date-select__item').forEach(item => {
+		item.addEventListener('click', (e) => {
+			if (document.querySelector(`[data-id="${item.dataset.target}"]`)) {
+				var target = document.querySelector(`[data-id="${item.dataset.target}"]`);
+				var positionTop = target.getBoundingClientRect().top + window.scrollY;
+				var headerH = 0;
+
+				document.querySelectorAll('header').forEach(item => {
+					headerH += item.offsetHeight;
+				});
+
+				window.scrollTo({top: positionTop - headerH - 52, behavior: 'smooth'});
+			}
+
+			e.preventDefault();
+		});
+	});
+}
+
+function setNumberFormat(n) {
+	n = n.toString();
+
+	if (n.length < 2) {
+		n = '0' + n;
+	}
+
+	return n;
+}
+
 /* data picker - 생활비서 */
 function calPic() {
 	$('.data-month-selec').datepicker({
@@ -535,10 +599,33 @@ function calPic() {
 		minDate: "-1m",
 		maxDate: "+1m",
 		showOn: "both",
+		dateFormat: "yymmdd",
 		//showButtonPanel: true,
 		//showAnim: "slideDown",
 		//closeText: '닫기',
-		dayNamesMin: [ "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" ]
+		dayNamesMin: [ "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" ],
+		onChangeMonthYear: function (year, month, inst) {
+			setCaleandar(year, month);
+		},
+		// beforeShowDay: function(date) {
+		// 	return [true, 'class name'];
+		// },
+		onSelect: function (dateText) {
+			selectedDate = dateText;
+
+			document.querySelectorAll('.date-select__item').forEach((item, index) => {
+				var parent = item.parentNode;
+
+				parent.classList.remove('focused');
+
+				if (item.dataset.target == selectedDate) {
+					document.querySelector(`[data-target="${selectedDate}"]`).parentNode.classList.add('focused');
+					dateSwiper.slideTo(index, 0);
+				}
+			});
+
+			$('.btn-hide-calendar').trigger('click');
+		},
 	});
 
 	$('.btn-show-calendar').click(function(){
