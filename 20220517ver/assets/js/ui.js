@@ -432,7 +432,59 @@ function tabMenu() {
 			$('.tab-wrp .inner-tab-cont:eq(' + num + ')').addClass("focused"); });
 }
 
-/* 알람 list swipe */
+var dateSwiper;
+function datePic(){
+	dateSwiper = new Swiper(".dateSwiper", {
+		slidesPerView: 7,
+		navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
+		  },
+		spaceBetween: 5,
+		breakpoints: {
+		  640: {
+			slidesPerView: 7,
+			spaceBetween: 10,
+		  },
+		  768: {
+			slidesPerView: 7,
+			spaceBetween: 20,
+		  },
+		  1024: {
+			slidesPerView: 7,
+			spaceBetween: 30,
+		  },
+		},
+	  });
+
+	setCaleandar();
+}
+
+function monthPic(){
+	var swiper = new Swiper(".monthSwiper", {
+		slidesPerView: 1,
+		navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
+		  },
+		spaceBetween: 10,
+		breakpoints: {
+		  640: {
+			slidesPerView: 1,
+			spaceBetween: 20,
+		  },
+		  768: {
+			slidesPerView: 1,
+			spaceBetween: 40,
+		  },
+		  1024: {
+			slidesPerView: 1,
+			spaceBetween: 50,
+		  },
+		},
+	  });
+}
+
 function alarmTrash(){
 	$('.alarm-wrp .dtl>li').swipe({ 
 		swipe:function(event, direction) {
@@ -478,65 +530,6 @@ function purposeSet(){
 	});
 }
 
-
-/* datepicker - swiper */
-function monthPic(){
-	var swiper = new Swiper(".monthSwiper", {
-		slidesPerView: 1,
-		navigation: {
-			nextEl: ".swiper-button-next",
-			prevEl: ".swiper-button-prev",
-		  },
-		spaceBetween: 10,
-		breakpoints: {
-		  640: {
-			slidesPerView: 1,
-			spaceBetween: 20,
-		  },
-		  768: {
-			slidesPerView: 1,
-			spaceBetween: 40,
-		  },
-		  1024: {
-			slidesPerView: 1,
-			spaceBetween: 50,
-		  },
-		},
-	  });
-}
-
-var dateSwiper;
-function datePic(){
-	dateSwiper = new Swiper(".dateSwiper", {
-		slidesPerView: 7, //한 화면에 노출되는 갯수
-		slidesPerGroup: 7, //롤링 갯수
-        loop: true, //반복여부
-        loopFillGroupWithBlank: true, //빈칸채우는여부
-		navigation: {
-			nextEl: ".swiper-button-next",
-			prevEl: ".swiper-button-prev",
-		  },
-		spaceBetween: 5,
-		breakpoints: {
-		  640: {
-			slidesPerView: 7,
-			spaceBetween: 10,
-		  },
-		  768: {
-			slidesPerView: 7,
-			spaceBetween: 20,
-		  },
-		  1024: {
-			slidesPerView: 7,
-			spaceBetween: 30,
-		  },
-		},
-	  });
-
-	setCaleandar();
-}
-
-/* data picker - 생활비서 */
 var currentDate = new Date();
 var selectedDate = `${currentDate.getFullYear()}${setNumberFormat(currentDate.getMonth() + 1)}${setNumberFormat(currentDate.getDate())}`;
 
@@ -598,6 +591,7 @@ function setNumberFormat(n) {
 	return n;
 }
 
+/* data picker - 생활비서 */
 function calPic() {
 	$('.data-month-selec').datepicker({
 		firstDay: 1,
@@ -652,53 +646,20 @@ function calPic() {
 
 /* data picker - 자산관리 이력정보 */
 function dataCalPic() {
-	$('.picker-bg-bk, .btn-cal-close').hide();
-	$('#dateStart, #dateEnd').click(function(){
-		$(this).parents().find('body').addClass('scroll-y-hidden');
-		$('#ui-datepicker-div').addClass('bg-white financial-wrp');
+	$('.date-start').datepicker({
+		firstDay: 1,
+		monthNames: [ "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" ],
+		//showButtonPanel: true,
+		//showAnim: "slideDown",
+		//closeText: '닫기',
+		dayNamesMin: [ "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" ]
 	});
-    var dateFormat = "yy/mm/dd",
-    	from = $( "#dateStart" ) //시작일 선택
-		.datepicker({
-			//showMonthAfterYear: true,//연도-월 순서
-			//changeMonth: true,//월 변경 필요시 살리기
-			dateFormat:"yy-mm-dd",
-			firstDay: 1,
-			monthNames: [ "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" ],
-			//showButtonPanel: true,
-			showAnim: "slideDown",
-			closeText: '닫기',
-			dayNamesMin: [ "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" ],
-			minDate:0,//오늘 이전 날짜 선택불가
-		})
-		.on( "change", function() {
-		to.datepicker( "option", "minDate", getDate(this) );//종료일의 minDate 지정
-		}),
-		to = $( "#dateEnd" ).datepicker({ //종료일 선택
-			dateFormat:"yy-mm-dd",
-			monthNames: [ "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" ],
-			dayNamesMin: [ "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" ],
-			minDate:'+1D' //내일부터 선택가능(+1D/+1M/+1Y..ND, NM, NY)
-		})
-		.on( "change", function() {
-		from.datepicker( "option", "maxDate", getDate(this) );//시작일의 maxDate 지정
-		});
- 
-    function getDate(element) {
-      var date;
-      try {
-        date = $.datepicker.parseDate( dateFormat, element.value );
-        if(element.id == 'dateStart'){
-        date.setDate(date.getDate()+1);//종료일: 시작일+1일 ~
-        }else{
-         date.setDate(date.getDate()-1);//시작일: 종료일-1일 ~
-        }
-      } catch( error ) {
-        date = null;
-      }
-      return date;
-    }
+	$('.date-end').datepicker({
+		firstDay: 1,
+		monthNames: [ "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" ],
+		//showButtonPanel: true,
+		//showAnim: "slideDown",
+		//closeText: '닫기',
+		dayNamesMin: [ "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" ]
+	});
 }
-
-/* */
- 
