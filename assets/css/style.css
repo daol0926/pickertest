@@ -63,7 +63,8 @@ main {z-index: 1;height: 100%;}
 .btn-area.fixed-bottom.btn-full{padding:0;height: fit-content;}
 .btn-area.fixed-bottom.btn-full button{width:100%;border-radius: 0;}
 
-.summary-txtdisplay:flex;align-items: center;justify-content: space-between;padding:0 1.5rem 1rem;margin:-0.3125rem -1.5rem 0;font-size:0.875rem;color:#444;border-bottom:1px solid #e4e4e4;}
+.summary-txt{display:flex;align-items: center;justify-content: space-between;padding:0 1.5rem 1rem;margin:-0.3125rem -1.5rem 0;font-size:0.875rem;color:#444;border-bottom:1px solid #e4e4e4;}
+.modal .summary-txt.empty{margin-top: -2rem;}
 .summary-txt .pagination {font-size:0.8125rem;color:#888;font-weight:500;letter-spacing: .075rem;}
 .summary-txt .pagination strong {color:#111;font-weight: 700;text-decoration: underline;}
 .summary-txt .pagination em:before {content:"/";font-size:0.6875rem;}
@@ -117,7 +118,7 @@ article.certify-box .certify {border-top:0;line-height:1;text-align: left;}
 
 .connect-container {padding-bottom:6.625rem;}
 .connect-container .container-header {padding:1.25rem 0 0;}
-.connect-container .summary-txtmargin:0;border-bottom: 0;}
+.connect-container .summary-txt{margin:0;border-bottom: 0;}
 .connect-wrap > header {padding:2.25rem 1.5rem 3.25rem;background-color:#43d4d3;border-radius: 1rem 1rem 0 0;}
 .connect-wrap .description {margin-bottom:1.875rem;font-size:0.875rem;color:#fff;font-weight:500;line-height:1.25rem;text-align:center;}
 .connect-wrap .description strong {color:#111;}
@@ -187,7 +188,6 @@ article.certify-box .certify {border-top:0;line-height:1;text-align: left;}
 .assets-confirm .assets {padding: 1.875rem 0 0;}
 .assets-confirm .assets + .assets {border-top:0;}
 .assets-confirm .assets h2 {display:block;}
-.assets-confirm .assets h2 em {}
 .assets-confirm .assets h2 .fail {font-weight:400;color:#ff0e0e;}
 .assets-confirm .assets.fail .box {display:flex;justify-content: space-between;align-items: center;}
 .assets-confirm .assets.fail .fail-msg {font-size:0.8125rem;color:#ff0e0e;}
@@ -211,7 +211,7 @@ article.certify-box .certify {border-top:0;line-height:1;text-align: left;}
 
 .assets-mgmt .assets-confirm {margin-top: 0;}
 .assets-mgmt .container-header {display:flex;align-items: center;height:2.8125rem;padding:0 1.5rem;background-color:#5a7fe2;}
-.assets-mgmt .summary-txtjustify-content: flex-start;margin:0;padding:0;border:0;font-size:0.875rem;color:#fff;font-weight:400;}
+.assets-mgmt .summary-txt{justify-content: flex-start;margin:0;padding:0;border:0;font-size:0.875rem;color:#fff;font-weight:400;}
 .assets-mgmt .summary-txt b {text-decoration: underline;}
 .assets-mgmt .connect-assets {margin:0;border-radius:0;}
 .assets-mgmt .assets h2 em {font-size:0.9375rem;font-weight:400;}
@@ -608,7 +608,6 @@ article.certify-box .certify {border-top:0;line-height:1;text-align: left;}
 .benefit-info .gallery-thumbs .swiper-slide span em {display:block;font-size:0.75rem;color:#888;}
 .benefit-info .gallery-thumbs .swiper-slide img {width:2.125rem;height:2.125rem;}
 .benefit-info .gallery-thumbs img {opacity:.5;width:2.125rem;}
-.benefit-info .gallery-thumbs .swiper-slide-thumb-active {}
 .benefit-info .gallery-thumbs .swiper-slide-thumb-active img {opacity:1;}
 
 .etc .list-title {padding:1.25rem 0;border-top:1px solid #ebebeb;}
@@ -864,7 +863,6 @@ article.certify-box .certify {border-top:0;line-height:1;text-align: left;}
 .gun:after {content:" 건";}
 
 .btn {display:block;width:100%;height:3.375rem;line-height:3.375rem;border-radius:0.875rem;color:#fff;font-size:1rem;font-weight:500;text-align:center;}
-.btn:disabled {}
 .btn-sm {width:7.6875rem;height:2.5rem;line-height:2.5rem;font-size:0.8125rem;border-radius: 0.5rem;}
 .btn-xs {display:inline-block;width:auto;height:1.75rem;line-height:1.75rem;padding:0 0.5625rem;font-size:0.6875rem;border-radius: 0.25rem;}
 .btn-full {width:100%;}
@@ -2528,10 +2526,9 @@ line-height: 1.2;}
 }
 .coinback-wrp .card.made-coin{
     margin: 0 0.775rem 0.775rem;
-    
-padding-top: 1.25rem;}
+    padding-top: 1.25rem;
+}
 
-.brand-save-wrp{}
 .brand-info{
     background-color: #fff;
     padding:1.25rem 1.25rem 0;
