@@ -130,6 +130,10 @@ div,h1,h2,h3,h4,h5,h6,p,span,ul,ol,li{
 .justify-content-between{
     justify-content: space-between;
 }
+.col-1{
+    flex: 0 0 auto;
+    width: 8.3333%;
+}
 .col-2{
     flex: 0 0 auto;
     width: 16.677777%;
@@ -157,6 +161,10 @@ div,h1,h2,h3,h4,h5,h6,p,span,ul,ol,li{
 .col-10{
     flex: 0 0 auto;
     width: 83.233333%;
+}
+.col-11{
+    flex: 0 0 auto;
+    width: 91.66667%;
 }
 .col-12{
     flex: 0 0 auto;
