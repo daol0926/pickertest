@@ -299,12 +299,20 @@ article.certify-box .certify {border-top:0;line-height:1;text-align: left;}
 
 .my-home .image-banner {margin-top:0.9375rem;}
 .my-home .image-banner a {display:block;}
+.my-home .image-banner img{image-rendering: -webkit-optimize-contrast;}
 
 .coin-back .bg-box {margin-bottom:1.5rem;}
 .coin-back ul {width: 100%;}
 .coin-back .cate {display: block;min-width: 3.0625rem;height:1.4375rem;margin: 0 auto 0.375rem;line-height:1.4375rem;padding:0 .5rem;font-size:.75rem;color:#888;background-color: #fff;border-radius:1rem;text-align: center;max-width: fit-content;}
 .coin-back .won {display:block;font-size:0.8125rem;}
 .coin-back .won:after {font-weight:500;}
+.coin-back .performance .graph-wrap li:before{content: unset;}
+.coin-back .bg-box.type-white{background-color: #FFF;border:1px solid #ebebeb;}
+.coin-back .bg-box.type-white ul>li{display:flex;align-items:center;justify-content:center;flex-flow:column;border-right:1px solid #ebebeb;width: 50%;}
+.coin-back .bg-box.type-white ul>li:last-child{border-right:0;}
+.coin-back .bg-box.type-white ul>li .cate{background-color: #ebebeb;border-radius: 1rem;padding-left:1rem;padding-right:1rem;}
+.coin-back .bg-box.type-white ul>li .kon{font-size: .9rem;}
+.coin-back .bg-box.type-white ul>li .kon::after{font-weight: normal;}
 
 .performance .card .card-header {padding-bottom:1.25rem;border-bottom:1px solid #ebebeb;border-radius: 0;}
 .performance .card .header-title {display:flex;align-items: center;}
@@ -383,7 +391,7 @@ article.certify-box .certify {border-top:0;line-height:1;text-align: left;}
 .made-coin .card-header .header-title {line-height:1.5rem;}
 .made-coin.card .card-body {position: relative;padding-top:1.8rem;}
 .made-coin .desc {width:100%;margin:1.25rem 0 2rem;font-size:0.8125rem;color:#888;font-weight:400;line-height: 1.3125rem;}
-.made-coin .desc mark {font-weight:700;color:#111;background-color:#fff04d;}
+.made-coin .desc mark {font-weight:700;color:#111;background-color:#fff04d;display: inline-flex;}
 .coin-graph {position: absolute;top:1rem;right:0;}
 .coin-graph:before,.coin-graph:after {content:"";display:block;position:absolute;top:2rem;left:-2rem;width:1.1875rem;height:1.1875rem;background: url(../images/home/ico_star.png) no-repeat;background-size:100% auto;}
 .coin-graph:after {top:-1.25rem;left:4rem;}
@@ -1707,6 +1715,9 @@ overflow-x: auto;}
 }
 .bill-ico-ss{
     background-image:url(../images/common/bill-ico-ss.png);
+}
+.bill-ico-wr{
+    background-image:url(../images/common/bill-ico-wr.png);
 }
 .my-home #header, .my-datas #header{
     justify-content: center;
@@ -3149,6 +3160,15 @@ text-align: right;}
     flex-flow: row wrap;
     align-items: center;
     justify-content: space-between;
+}
+
+.card-body .event-list-wrp{
+    margin-top:-2rem;
+    padding:0;
+}
+
+.wrp-full{
+    margin:0 -.775rem;
 }
 
 @media only screen and (max-width:319px){
