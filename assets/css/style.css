@@ -3136,6 +3136,21 @@ text-align: right;}
     bottom:0.775rem;
 }
 
+
+/* dtl list add */
+.dtl-inner-list{
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+.dtl-inner-list>div{
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
 @media only screen and (max-width:319px){
     .data-month-selec .ui-datepicker-calendar tbody td span, 
     .data-month-selec .ui-datepicker-calendar tbody td a{
