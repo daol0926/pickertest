@@ -1410,6 +1410,11 @@ display: flex;align-items: center;justify-content: center;}
 .data-month-selec .ui-datepicker-calendar tbody td a{
     padding: 1.62rem .52rem;
 }
+/* 220525 수정 : 보내주신 이미지에 prev, next 버튼은 없어서 임시 삭제했습니다. */
+.data-month-selec .ui-datepicker-next,
+.data-month-selec .ui-datepicker-prev {
+    display: none;
+}
 .ui-datepicker-calendar .ui-state-active{
     background-color:#dff3fa;
     border-radius: 1.5rem;
