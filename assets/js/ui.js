@@ -567,3 +567,21 @@ function layerPopupWrp() {
 		}
 	}
 }
+
+
+/* 코인백 내역보기 sort list */
+function coinbackSortList() {
+	$('.coinback-dtl .form-radio-btn').click(function(){
+		$('.coinback-dtl').removeClass('open');
+		$(this).parents().find('body').removeClass('dimmed');
+	});
+	$('#regularAll').click(function(){
+		$('.sort-txt').text('전체');
+	});
+	$('#regularYes').click(function(){
+		$('.sort-txt').text('적립');
+	});
+	$('#regularNo').click(function(){
+		$('.sort-txt').text('사용');
+	});
+}

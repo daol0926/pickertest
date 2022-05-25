@@ -871,7 +871,6 @@ article.certify-box .certify {border-top:0;line-height:1;text-align: left;}
 .p:after {content:" P";}
 .k:after {content:" K";}
 .gun:after {content:" 건";}
-.per::after{content: ' %';}
 
 .btn {display:block;width:100%;height:3.375rem;line-height:3.375rem;border-radius:0.875rem;color:#fff;font-size:1rem;font-weight:500;text-align:center;}
 .btn-sm {width:7.6875rem;height:2.5rem;line-height:2.5rem;font-size:0.8125rem;border-radius: 0.5rem;}
@@ -2798,7 +2797,7 @@ text-align: right;}
 }
 .event-list-wrp{
     margin-top:-4.25rem;
-    padding:4.25rem 1.25rem 1.25rem;
+    padding: 4.25rem 0 1.25rem;
 }
 .event-list-wrp .event-list-num{
     margin:0 1.5rem 1rem;
