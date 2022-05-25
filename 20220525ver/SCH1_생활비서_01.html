@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+	<title>KT 마이데이터 생활비서</title>
+	<link type="text/css" rel="stylesheet" href="assets/css/common.css" />
+</head>
+<body>
+<!-- wrapper -->
+<div id="wrapper" class="my-sch">
+<!-- header -->
+<header id="header" class="title-left">
+	<button type="button" class="btn-back"><em class="ico ico-back">이전</em></button>
+	<h1>생활비서</h1>
+</header>
+<!-- //header -->
+
+<!-- container -->
+<main id="container">
+	<header class="container-header consider-wrap bg-gray">
+		<nav class="lnb">
+			<ul>
+				<li><a href="#">한눈에</a></li>
+				<li><a href="#">KON적립</a></li>
+				<li class="current"><a href="#">생활비서</a></li>
+				<li><a href="#">자산관리</a></li>
+			</ul>
+		</nav>
+	</header>
+		<!-- cate-wrap -->
+		<!--
+		<header class="cate-wrap scroll-x">
+			<ul>
+				<li><button type="button" data-target="#telecom" class="current"><em>금융</em></button></li>
+				<li><button type="button" data-target="#card"><em>통신/라이프</em></button></li>
+				<li><button type="button" data-target="#bank"><em>공과금</em></button></li>
+				<li><button type="button" data-target="#insurance"><em>보험</em></button></li>
+				<li><button type="button" data-target="#securities"><em>증권</em></button></li>
+				<li><button type="button" data-target="#paymoney"><em>페이머니</em></button></li>
+				<li><button type="button" data-target="#capital"><em>캐피탈</em></button></li>
+				<li><button type="button" data-target="#guarantee"><em>보증보험</em></button></li>
+			</ul>
+		</header>
+		-->
+		<!--//cate-wrap -->
+		
+	<!-- date-select -->
+		<section class="date-select pb1_5">
+			<div class="row justify-content-between">
+				<div class="data-month-selec" id="datepicker">
+					<div class="ui-datepicker-bg"></div>
+				</div> <!--//data-month-selec -->
+				<!-- data-month-selec 
+				<div class="data-month-selec" onclick="modal('.month-selec-list')">
+					<div class="month-tab tit">2022년 4월
+						<button type="button" class="ico ico-fold"></button>
+					</div>
+				</div>
+				//data-month-selec -->
+				<div class="picker-btn-area">
+					<button type="button" class="btn-txt c-gray"><i class="ico ico-refresh"></i>구글캘린더 연동중</button>
+				</div>
+			</div>
+			<!-- dateSwiper -->
+			<div class="swiper dateSwiper">
+				<div class="swiper-wrapper">
+					<!-- <div class="swiper-slide focused">
+						<span>Mon</span>
+						<span class="num">01</span>
+					</div>
+					<div class="swiper-slide">
+						<span>Tue</span>
+						<span class="num">02</span>
+					</div> -->
+				</div>
+				<div class="swiper-button-next"></div>
+      			<div class="swiper-button-prev"></div>
+			</div>
+			<!--//dateSwiper-->
+			<div class="btn-area col-12 mt0">
+				<button type="button" class="btn-show-calendar"></button>
+				<button type="button" class="btn-hide-calendar"></button>
+			</div>
+			<div class="btn-area col-12">
+				<button type="button" class="btn btn-secondary white"><i class="ico ico-google"></i>구글 캘린더 연동</button>
+			</div>
+		</section>
+		<!--//date-select -->
+
+		<!-- my-status -->
+		<section class="my-status budget">
+			<div class="card my-assets">
+				<div class="card-header">
+					<div class="tit-area">
+						<h3 class="header-title">한달 예산이 이만큼 남았어요</h3>
+						<div class="row purpose-set-wrp">
+							<strong class="won">
+								<span class="before-won">1,300,000</span>
+								<input type="text" class="form-control input-purpose" />
+							</strong>
+							<div class="btn-area">
+								<button type="button" class="btn btn-light-secondary btn-xs btn-round btn-purpose">목표예산 재설정</button>
+								<button type="button" class="btn btn-light-secondary btn-xs btn-round btn-reset-complete" disabled="disabled">설정완료</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card-body">
+					<div class="donut-chart">
+						<div class="chart" data-internet="25" data-tv="15" data-mobile="60">
+							<span class="chart-txt">지난 주의<br />최대 지출 영역</span>
+							<span class="chart-cate">모빌리티</span>
+							<i class="ico ico-mobility"></i>
+						</div>
+						<ul class="chart-index">
+							<li><em>총 목표 예산</em><strong class="won">2,500,000</strong></li>
+							<li><em>오늘까지의 지출</em><strong class="won">1,200,000</strong></li>
+							<li><em>하루 권장 예산</em><strong class="won">86,655</strong></li>
+						</ul>
+					</div>		
+					<div class="btn-area text-right accordion">
+						<div class="tit">
+							<button type="button" class="btn-txt undline-none">주간소비 리포트 <i class="ico ico-fold"></i></button>
+						</div>
+						<div class="dtl weekly-report">
+							<div class="title-area">
+								<span class="btn btn-xs btn-round tit-ico">주간소비</span>
+								<span class="tit">(카테고리명)을/를 많이 이용하셨네요</span>
+							</div>
+							<div class="title-desc c-gray">
+								<span>지난 주의 총 지출은 <em class="won">N</em>입니다.</span>
+								<span>지난 주 하루 평균 지출은 <em class="won">N</em>이에요.</span>
+							</div>
+							<div class="title-desc">
+								<span>모빌리티 이용을 조금만 줄이고 대중교통을 이용해 보시는 건 어때요?</span>
+							</div>
+						</div>
+					</div>				
+				</div>
+			</div>
+		</section>
+		<!--//my-status -->
+
+		<div class="dtl-history bg-white pt1_5 day-schedule pb0">
+			<div class="history">
+				<ul>
+					<li data-id="20220516">
+						<!-- json date area -->
+						<span class="date">TODAY</span>
+						<!--//json date area -->
+						<!-- json 날짜별 data area -->
+						<ul class="dtl">
+							<li>
+								<!-- 타이틀 -->
+								<div class="row col-12">
+									<div class="ico-area">
+										<i class="ico ico-card"></i>
+									</div>
+									<div class="title-area">
+										<div class="row column">
+											<span class="dtl-title">신한카드 결제일이에요</span>
+											<span class="dtl-title-desc won">결제금액: 2,000,000</span>
+											<span class="dtl-title-desc c-gray up">전월 대비 <span class="won">15,000</span>
+										</div>
+									</div>
+								</div>
+								<!--// 타이틀 -->
+
+								<!-- 타이틀 inner -->
+								<div class="dtl-inner">
+									<ul>
+										<li>
+											<div class="title-area">
+												<span class="inner-title">줄줄 새는 통신비, 덜 낼 수 있는 방법 없을까?</span>
+											</div></li>
+										<li>
+											<div class="row justify-content-between reverse">
+												<div class="ico-area">
+													<i class="ico ico-card-clip"></i>
+												</div>
+												<div class="title-area">
+													<span class="inner-title"><b>KB CLiP 카드 &gt;</b></span>
+													<span>통신요금 최대 10% 청구할인</span>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<!--//타이틀 inner -->
+							</li>
+						</ul>
+						<!--// json 날짜별 data area :: dtl 영역을 loop처리해주시면 됩니다. -->
+						<ul class="dtl">
+							<li>
+								<div class="row col-12">
+									<div class="ico-area">
+										<i class="ico ico-car"></i>
+									</div>
+									<div class="title-area">
+										<div class="row column">
+											<span class="dtl-title">자동차 보험 갱신하시는 것 어때요?</span>
+											<span class="dtl-title-desc">만기일: YYYY-MM-DD</span>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<div class="dtl btn-area">
+							<button type="button" class="btn btn-light-secondary">내 차 보험료 확인하면 3,000코인 적립해 드려요. &gt;</button>
+						</div>
+						<ul class="dtl">
+							<li>
+								<div class="row col-12">
+									<div class="ico-area">
+										<i class="ico ico-google"></i>
+									</div>
+									<div class="title-area">
+										<div class="row column">
+											<span class="dtl-title">KT 마이데이터 정기 회의</span>
+											<span class="dtl-title-desc c-gray">오후 14:00 ~ 오후 17:00</span>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li data-id="20220517">
+						<span class="date">3/30(수)</span>
+						<!-- [D] 취소 시 li에 cancel 클래스 추가 -->
+						<ul class="dtl">
+							<li>
+								<!-- 타이틀 -->
+								<div class="row col-12">
+									<div class="ico-area">
+										<i class="ico ico-cash"></i>
+									</div>
+									<div class="title-area">
+										<div class="row column">
+											<span class="dtl-title">혹시 급여일 아니신가요?</span>
+											<i class="ico-lion"></i>
+										</div>
+									</div>
+								</div>
+								<!--//타이틀 -->
+								<!-- 타이틀 inner -->
+								<div class="dtl-inner">
+									<ul>
+										<li>
+											<div class="title-area">
+												<span class="inner-title">신나는 급여일,<br />이곳에서 결제하면 코인이 와르르!</span>
+											</div>
+										</li>
+										<li>
+											<div class="coin-list">
+												<div class="row align-items-center">
+													<a class="list-box">
+														<i class="ico ico-musinsa"></i>
+													</a>
+													<a class="list-box">
+														<i class="ico ico-hyundai"></i>
+													</a>
+													<a class="list-box">
+														<i class="ico ico-cj-onstyle"></i>
+													</a>
+												</div>
+												<button type="button" class="btn btn-secondary btn-xs btn-round">코인적립<i class="ico-save-arrow"></i></button>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<!--//타이틀 inner -->
+							</li>
+						</ul>
+					</li>
+
+					<li data-id="20220518">
+						<span class="date">3/25(금)</span>
+						<ul class="dtl">
+							<li>
+								<!-- 타이틀 -->
+								<div class="row col-12">
+									<div class="ico-area">
+										<i class="ico ico-kt"></i>
+									</div>
+									<div class="title-area">
+										<div class="row column">
+											<span class="dtl-title">iPhone SE 출시일이에요!</span>
+											<span class="dtl-title-desc">현재 단말: Galaxy S9</span>
+											<span class="dtl-title-desc c-gray">(2019년 2월 구매)</span>
+										</div>
+									</div>
+								</div>
+								<!--//타이틀 -->
+								<!-- 타이틀 inner -->
+								<div class="dtl-inner">
+									<ul>
+										<li>
+											<div class="title-area">
+												<span class="inner-title">오직 KT에서만 누릴 수 있는 사전예약 혜택!</span>
+											</div>
+										</li>
+										<li>
+											<div class="row justify-content-between reverse">
+												<div class="ico-area">
+													<i class="ico ico-iphone-se"></i>
+												</div>
+												<div class="title-area">
+													<span class="inner-title"><b>iPhone SE 사전예약 신청하기&gt;</b></span>
+													<span class="inner-title-desc">사전예약: 3/18(금) ~ 3/25(금)</span>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<!--//타이틀 inner -->
+							</li>
+						</ul>
+						<ul class="dtl">
+							<li>
+								<!-- 타이틀 -->
+								<div class="row col-12">
+									<div class="ico-area">
+										<i class="ico ico-lego"></i>
+									</div>
+									<div class="title-area">
+										<div class="row column">
+											<span class="dtl-title">호그와트™앞뜰: 시리우스 구조 출시예정일이에요</span>
+											<span class="dtl-title-desc c-gray">출시예정일: 4/29(금)</span>
+										</div>
+									</div>
+								</div>
+								<!--//타이틀 -->
+							</li>
+						</ul>
+						<ul class="dtl">
+							<li>
+								<!-- 타이틀 -->
+								<div class="row col-12">
+									<div class="ico-area">
+										<i class="ico ico-nike"></i>
+									</div>
+									<div class="title-area">
+										<div class="row column">
+											<span class="dtl-title">우먼스 에어 조던 11 로우 출시예정일이에요</span>
+											<span class="dtl-title-desc c-gray">출시예정일: 4/29(금)</span>
+											<span class="dtl-title-desc c-gray">한국 / Pure Violet</span>
+										</div>
+									</div>
+								</div>
+								<!--//타이틀 -->
+							</li>
+						</ul>
+					</li>
+
+					<li data-id="20220519">
+						<span class="date">3/18(금)</span>
+						<ul class="dtl">
+							<li>
+								<!-- 타이틀 -->
+								<div class="row col-12">
+									<div class="ico-area">
+										<i class="ico ico-kt"></i>
+									</div>
+									<div class="title-area">
+										<div class="row column">
+											<span class="dtl-title">KT 통신비 납부일이에요</span>
+											<span class="dtl-title-desc c-gray up">전월대비 <span class="won">15,000</span>
+										</div>
+									</div>
+								</div>
+								<!--//타이틀 -->
+								<!-- 타이틀 inner -->
+								<div class="dtl-inner">
+									<ul>
+										<li>
+											<div class="title-area">
+												<span class="inner-title">방구석 1열~요금제는?<br />이런 요금제 어떠신가요?!</span>
+											</div>
+										</li>
+										<li>
+											<div class="row justify-content-between reverse">
+												<div class="ico-area">
+													<i class="ico ico-iphone-se"></i>
+												</div>
+												<div class="title-area">
+													<span class="inner-title"><b>TV엔터 &gt;</b></span>
+													<span class="inner-title-desc">30만 여편 VOD, 매월 TV 크펀 1만원 지급</span>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<!--//타이틀 inner -->
+							</li>
+						</ul>
+						<ul class="dtl">
+							<li>
+								<!-- 타이틀 -->
+								<div class="row col-12">
+									<div class="ico-area">
+										<i class="ico ico-coin"></i>
+									</div>
+									<div class="title-area">
+										<div class="row column">
+											<span class="dtl-title">코인 적립을 통한 통신비 할인 예정일이에요</span>
+											<span class="dtl-title-desc c-gray">할인금액: <span class="won">N</span>
+										</div>
+									</div>
+								</div>
+								<!--//타이틀 -->
+								<!-- 타이틀 inner -->
+								<div class="dtl-inner">
+									<ul>
+										<li>
+											<div class="title-area">
+												<span class="inner-title">코인 미리 미리 쟁여두고<br />다음 달엔 통크게 할인받자!</span>
+											</div>
+										</li>
+										<li>
+											<div class="coin-list">
+												<div class="row align-items-center">
+													<a class="list-box">
+														<i class="ico ico-musinsa"></i>
+													</a>
+													<a class="list-box">
+														<i class="ico ico-hyundai"></i>
+													</a>
+													<a class="list-box">
+														<i class="ico ico-cj-onstyle"></i>
+													</a>
+												</div>
+												<button type="button" class="btn btn-secondary btn-xs btn-round">코인적립<i class="ico-save-arrow"></i></button>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<!--//타이틀 inner -->
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!--//history -->
+		</div>
+
+		<div class="btn-area">
+			<img src="assets/images/banner/bn1.png" />
+		</div>
+
+		<!-- btn-area fixed-bottom -->
+		<!--
+		<div class="btn-area fixed-bottom bn-img">
+			<img src="assets/images/banner/bn1.png" />
+		</div>
+		-->
+		<!--// btn-area fixed-bottom -->
+	</main>
+	<!-- //container -->
+</div>
+<!-- //wrapper -->
+
+
+<!-- modal -->
+<!--
+<div class="modal bottom-sheet month-selec-list">
+	<header class="modal-header">
+		<h2 class="title">기준 월 선택</h2>
+		<button type="button" class="btn-close" onclick="modalClose(this)"><em class="ico ico-close">Close</em></button>
+	</header>
+	<section class="modal-container">
+		
+		<div class="scroll-container">
+			<div class="form-radio">
+				<input type="radio" name="checkedAgree" id="monthSelec04">
+				<label for="monthSelec04">이전달 (2022년 04월)</label>
+			</div>
+			<div class="form-radio">
+				<input type="radio" name="checkedAgree" id="monthSelec05">
+				<label for="monthSelec05">2022년 05월</label>
+			</div>
+			<div class="form-radio">
+				<input type="radio" name="checkedAgree" id="monthSelec06">
+				<label for="monthSelec06">다음달 (2022년 06월)</label>
+			</div>
+		</div>
+
+	</section>
+</div>
+-->
+<!--//modal -->
+
+<script type="text/javascript" src="assets/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="assets/js/plugins.js"></script>
+<script type="text/javascript" src="assets/js/ui.js"></script>
+<script type="text/javascript" src="assets/js/ui-sch.js"></script>
+<script type="text/javascript">
+	//자산 accordion
+	accordion();
+	//목표예산 설정
+	purposeSet();
+	//date picker
+	calPic();
+	//month, date swipe
+	//monthPic();
+	datePic();
+</script>
+</body>
+</html>

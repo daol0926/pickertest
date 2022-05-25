@@ -139,8 +139,8 @@ function calPic() {
 	$('.data-month-selec').datepicker({
 		firstDay: 1,
 		monthNames: [ "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" ],
-		minDate: new Date('2022-04-01'),
-		//maxDate: '+1m', //maxDate 삭제 20220520
+		// minDate: new Date('2022-04-01'),  // 220525 수정 : min, max를 몰라서 임시로 지웠습니다.
+		maxDate: '+1m',  // 220525 수정 : min, max를 몰라서 임시로 추가했습니다.
 		showOn: "both",
 		dateFormat: "yymmdd",
 		//showButtonPanel: true,
@@ -148,8 +148,8 @@ function calPic() {
 		//closeText: '닫기',
 		dayNamesMin: [ "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" ],
 		monthNamesShort: [ "01월", "02월", "03월", "04월", "05월", "06월", "07월", "08월", "09월", "10월", "11월", "12월" ], // 220525 수정 : 월 name 변경 (년도 name 변경은 없음)
-		changeMonth: true, // 220525 수정 : 월 선택 옵션 추가
-        //changeYear: true, // 220525 수정 : 년도 선택 옵션 추가
+		changeMonth: true, // 220525 수정 : 월 선택 옵션
+        changeYear: true, // 220525 수정 : 년도 선택 옵션
 		onChangeMonthYear: function (year, month, inst) {
 			setCaleandar(year, month);
 		},
