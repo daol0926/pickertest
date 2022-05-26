@@ -1431,9 +1431,9 @@ z-index: 1;}
 .ui-datepicker-header .ui-datepicker-year::after{
     content: '년';
 }
-/* 특정일 표시 - 백엔드 적용 후 클래스 수정 필요 */
-.ui-datepicker-calendar tbody tr:nth-child(2) td:nth-child(4)::after, /* 백엔드 적용 후 삭제 */
-.ui-datepicker-calendar .calendar-bullet{
+/* 특정일 표시 */
+.ui-datepicker-calendar tbody tr td.colordot::after,
+.ui-datepicker-calendar .swiper-wrapper div.colordot::after{
     content: '';
     display: block;
     width: .5rem;
@@ -1443,6 +1443,9 @@ z-index: 1;}
     position:absolute;
     left:calc(50% - .25rem);
     margin-top: -1rem;
+}
+.ui-datepicker-calendar .swiper-wrapper div.colordot::after{
+    margin-top: 0.5rem;
 }
 .picker-btn-area{
     position: relative;
@@ -1745,6 +1748,9 @@ overflow-x: auto;}
 }
 .bill-ico-wr{
     background-image:url(../images/common/bill-ico-wr.png);
+}
+.bill-ico-sh{
+    background-image:url(../images/common/ico-sh.png);
 }
 .my-home #header, .my-datas #header{
     justify-content: center;
