@@ -148,7 +148,7 @@ function calPic() {
 		//closeText: '닫기',
 		dayNamesMin: [ "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" ],
 		monthNamesShort: [ "01월", "02월", "03월", "04월", "05월", "06월", "07월", "08월", "09월", "10월", "11월", "12월" ], // 220525 수정 : 월 name 변경 (년도 name 변경은 없음)
-		changeMonth: true, // 220525 수정 : 월 선택 옵션 추가
+		//changeMonth: true, // 220525 수정 : 월 선택 옵션 추가
         //changeYear: true, // 220525 수정 : 년도 선택 옵션 추가
 		onChangeMonthYear: function (year, month, inst) {
 			setCaleandar(year, month);

@@ -343,12 +343,12 @@ function scrollChk(obj){
 	var divHeight = divScroll.height();
 	if( divScroll.hasScrollBar() ){
 		divScroll.scrollTop(0);
-		$(obj+" .modal-container .btn-secondary").text("아래로 이동하기").attr("onclick","scrollDown(this)");
+		$(obj+" .modal-container .btn-light-secondary").text("아래로 이동하기").attr("onclick","scrollDown(this)");
 	}
 	divScroll.scroll(function(){  
 		console.log($(this)[0].scrollHeight +" / "+ Math.round($(this).scrollTop())) 
 		if ($(this)[0].scrollHeight - Math.round($(this).scrollTop()) <= $(this).outerHeight()){
-			$(obj+" .modal-container .btn-secondary").text("동의").attr("onclick","modalFullClose(this)");
+			$(obj+" .modal-container .btn-light-secondary").text("동의").attr("onclick","modalFullClose(this)");
 		}         
 	});
 }
